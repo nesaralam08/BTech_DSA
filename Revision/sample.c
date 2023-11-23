@@ -59,11 +59,12 @@ void PostOrder(node* root){
         printf("%d  ",root->data);
     }
 }
-void main()
+int  main()
 {
     node *root;
     root = CreateNode();
     InOrder(root); //left root right
     PreOrder(root); //root left right
     PostOrder(root); //left right root
+    return 0;
 }
