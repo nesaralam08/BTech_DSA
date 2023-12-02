@@ -44,7 +44,7 @@ void PreOrder(node *root){
 }
 void PostOrder(node*root){
     if(root==0){
-        return;
+        return; 
     }
     else{
         PostOrder(root->left);
