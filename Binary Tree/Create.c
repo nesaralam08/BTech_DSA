@@ -52,6 +52,22 @@ void PostOrder(node*root){
         printf("%d ",root->data);
     }
 }
+node* insert(node*root,int n)
+{
+    if(root==NULL)
+    {
+        return root;
+    }
+    if(n<root->data)
+    {
+        root->left = insert(root->left,n);
+    }
+    else if(n>root->data)
+    {
+        root->right = insert(root->right,n);
+    }
+    return root;
+}
 int main(){
     node *root;
     root = Create();
@@ -61,4 +77,9 @@ int main(){
     PreOrder(root);
     printf("\n\nPost-Order Printing:\t");
     PostOrder(root);
+    int n;
+    printf("\n\nEnter element for insert:\t");
+    scanf("%d",&n);
+    root =insert(root,n);
+    Inorder(root);
 }
